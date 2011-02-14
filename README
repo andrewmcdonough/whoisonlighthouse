@@ -1,0 +1,5 @@
+= A sinatra app to tell the Tribesports tech team who's turn it is to fix bugs.
+
+== Requirements
+ruby 1.9
+
