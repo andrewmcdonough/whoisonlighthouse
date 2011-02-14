@@ -1,2 +1,2 @@
-require 'lighthouse'
+require './lighthouse'
 run Sinatra::Application
