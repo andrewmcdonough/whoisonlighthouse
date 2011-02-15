@@ -1,5 +1,8 @@
 require 'sinatra'
 
+DEVELOPERS = %w(Andrew Simon Joe)
+START_DATE = Time.mktime(2011,02,04)
+
 get '/' do
   @who = who_is_on_lighthouse(Time.now)
   erb :index
@@ -10,7 +13,7 @@ def who_is_on_lighthouse(date)
 end
 
 def who_is_on_lighthouse_on_day(day)
-  developers = %w(Andrew Simon Joe)
+  developers = DEVELOPERS.clone
   (1..day).each do |i|
     next if [1,2].include? i % 7
     developers.rotate!
@@ -19,6 +22,6 @@ def who_is_on_lighthouse_on_day(day)
 end
 
 def days_since_start(date)
-  ((date - Time.mktime(2011,02,04)) / (60*60*24)).floor
+  ((date - START_DATE) / (60*60*24)).floor
 end
 
